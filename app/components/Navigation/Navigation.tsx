@@ -34,7 +34,8 @@ export function Navigation() {
           </li>
         ))}
       </ul>
-      <Link href="/login" />
+      <Link href="/login">Login</Link>
+      <Link href="/sign-up">Sign Up</Link>
     </div>
   );
 }

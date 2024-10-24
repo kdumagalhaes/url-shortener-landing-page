@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./Navigation.module.scss";
 
 export function Navigation() {
   const MENU_OPTIONS = [
@@ -18,8 +19,8 @@ export function Navigation() {
   ];
 
   return (
-    <div>
-      <Link href="/">
+    <div className={styles.navigation}>
+      <Link href="/" className={styles.logo}>
         <Image
           src="../../../images/logo.svg"
           alt="URL shortener logo"
@@ -27,15 +28,21 @@ export function Navigation() {
           height={33}
         />
       </Link>
-      <ul>
+      <ul className={styles.list}>
         {MENU_OPTIONS.map((option) => (
           <li key={option.slug}>
-            <Link href={option.slug}>{option.title}</Link>{" "}
+            <Link className={styles.item} href={option.slug}>
+              {option.title}
+            </Link>
           </li>
         ))}
       </ul>
-      <Link href="/login">Login</Link>
-      <Link href="/sign-up">Sign Up</Link>
+      <div className={styles.register}>
+        <Link className={styles.login} href="/login">
+          Login
+        </Link>
+        <Link href="/sign-up">Sign Up</Link>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+
+.navigation {
+  padding: 4rem 12rem;
+  display: flex;
+  align-items: top;
+}
+
+.logo {
+  margin-right: 3rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-grow: 1; 
+  justify-content: flex-start;
+}
+
+.item,
+.login {
+  font-weight: 700;
+  transition: all 0.3s;
+  &:hover {
+    color: $dark-blue
+  }
+}
+
+.register {
+  display: flex;
+  gap: 3rem;
+}

@@ -9,6 +9,7 @@ body {
 body {
   color: $gray;
   background: $white;
+  font-family: var(--font-poppins), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;

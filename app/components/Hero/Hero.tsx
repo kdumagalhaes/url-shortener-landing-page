@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import Image from "next/image";
 import { NavigationButton } from "../NavigationButton/NavigationButton";
 import styles from "./Hero.module.scss";
 export function Hero() {
@@ -12,6 +13,13 @@ export function Hero() {
         </h2>
         <NavigationButton href="/get-started" text="Get Started" mode="large" />
       </div>
+      <Image
+        className={styles.image}
+        src="../../../images/illustration-working.svg"
+        alt="a draw with a woman working in a computer"
+        width={733}
+        height={482}
+      />
     </section>
   );
 }

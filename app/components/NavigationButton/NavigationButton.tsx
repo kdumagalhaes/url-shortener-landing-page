@@ -11,7 +11,6 @@ export function NavigationButton({
   text,
   mode = "large",
 }: NavigationButtonProps) {
-  console.log(styles.button);
   return (
     <Link
       className={`${styles.button} ${

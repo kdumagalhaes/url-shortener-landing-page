@@ -1,0 +1,26 @@
+@import "../../variables.scss";
+
+.button {
+  background-color: $primary-cyan;
+  color: $white;
+  opacity: 1;
+  transition: opacity 0.3s;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  
+  &--small {
+    padding: 0.5rem 1.5rem;
+    font-size: 1;
+  }
+
+  &--large {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    opacity: 0.65;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../variables.scss";
+
+.urlInput,
+.input {
+  border-radius: 10px;
+}
+
+.urlInput {
+  background-color: $primary-dark-violet;
+  background-image: url('../../../public/images/bg-shorten-desktop.svg');
+  padding: 3rem;
+  border-radius: 10px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: $gray;
+  border: none;
+
+  &::placeholder {
+   color: $gray;
+  }
+}

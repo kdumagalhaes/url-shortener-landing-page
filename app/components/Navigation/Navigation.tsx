@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NavigationButton } from "../NavigationButton/NavigationButton";
 import styles from "./Navigation.module.scss";
 
 export function Navigation() {
@@ -41,7 +42,7 @@ export function Navigation() {
         <Link className={styles.login} href="/login">
           Login
         </Link>
-        <Link href="/sign-up">Sign Up</Link>
+        <NavigationButton href="/sign-up" text="Sign Up" mode="small" />
       </div>
     </div>
   );

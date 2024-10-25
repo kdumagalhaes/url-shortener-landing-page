@@ -2,26 +2,27 @@
 
 .urlInput,
 .input {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .urlInput {
   background-color: $primary-dark-violet;
   background-image: url('../../../public/images/bg-shorten-desktop.svg');
   padding: 3rem;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0 auto 1.5rem auto;
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.inputContainer,
 .input {
   width: 100%;
 }
 
 .inputContainer {
   position: relative;
+  flex-grow: 1;
 }
 
 .input {

@@ -3,11 +3,13 @@
 .navigation {
   padding: 4rem 12rem;
   display: flex;
-  align-items: top;
+  align-items: center;
 }
 
 .logo {
   margin-right: 3rem;
+  // addjusts vertical position based on menu items
+  padding-top: 5px;
 }
 
 .list {
@@ -29,5 +31,6 @@
 
 .register {
   display: flex;
+  align-items: center;
   gap: 3rem;
 }

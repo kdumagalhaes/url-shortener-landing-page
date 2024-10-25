@@ -15,8 +15,16 @@
   gap: 1rem;
 }
 
+.inputContainer,
 .input {
   width: 100%;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.input {
   padding: 1rem 1.5rem;
   font-size: 1.3rem;
   font-weight: 700;
@@ -26,4 +34,20 @@
   &::placeholder {
    color: $gray;
   }
+
+  &--warning {
+    outline: 2px solid $secondary-red;
+
+    &::placeholder {
+      color: $secondary-red;
+     }
+  }
+}
+
+.warningMessage {
+  position: absolute;
+  color: $secondary-red;
+  font-size: 0.9rem;
+  font-style: italic;
+  bottom: -30px;
 }

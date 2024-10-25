@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./UrlInput.module.scss";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 export function UrlInput() {
   const [url, setUrl] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
@@ -26,7 +27,11 @@ export function UrlInput() {
         />
         {isEmpty && <p className={styles.warningMessage}>Please add a link</p>}
       </div>
-      <button onClick={validateUrl}>Shorten It!</button>
+      <PrimaryButton
+        clickHandler={validateUrl}
+        text="Shorten It"
+        mode="large"
+      />
     </div>
   );
 }

@@ -11,6 +11,11 @@
   gap: 1rem;
 }
 
+.item,
+.resultContainer {
+  align-items: center;
+}
+
 .item {
   background-color: $white;
   padding: 1rem 2rem;

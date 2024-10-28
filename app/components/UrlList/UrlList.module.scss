@@ -1,0 +1,42 @@
+@import "../../variables.scss";
+
+.urlList,
+.item,
+.resultContainer {
+  display: flex;
+}
+
+.urlList {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item,
+.resultContainer {
+  align-items: center;
+}
+
+.item {
+  background-color: $white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.resultContainer {
+  gap: 1rem;
+}
+
+.requestUrl,
+.resultUrl {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.requestUrl {
+  color: $dark-blue;
+}
+
+.resultUrl {
+  color: $primary-cyan;
+}

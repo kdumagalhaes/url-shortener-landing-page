@@ -1,13 +1,11 @@
 import { Hero } from "./components/Hero/Hero";
-import { UrlInput } from "./components/UrlInput/UrlInput";
-import { UrlList } from "./components/UrlList/UrlList";
+import { UrlShortenerContainer } from "./components/UrlShortenerContainer/UrlShortenerContainer";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <UrlInput />
-      <UrlList />
+      <UrlShortenerContainer />
     </div>
   );
 }

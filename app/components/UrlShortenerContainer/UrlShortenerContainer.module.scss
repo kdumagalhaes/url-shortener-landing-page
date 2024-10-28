@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.container {
+  background-color: $gray;
+  position: relative;
+  width: 100%;
+  margin-top: 10rem;
+  padding: 12rem;
+}
+
+.section {
+  position: absolute;
+  top: -4.5rem;
+  left: 12rem;
+  width: calc(100% - 24rem);
+}

@@ -1,3 +1,5 @@
+import styles from "./UrlList.module.scss";
+
 const MOCK_URL_RESULT = [
   {
     id: "1ab2c3",
@@ -12,12 +14,14 @@ const MOCK_URL_RESULT = [
 ];
 export function UrlList() {
   return (
-    <ul>
+    <ul className={styles.urlList}>
       {MOCK_URL_RESULT.map((result) => (
-        <li key={result.id}>
-          <p>{result.request_url}</p>
-          <p>{result.result_url}</p>
-          <button>Copy</button>
+        <li className={styles.item} key={result.id}>
+          <p className={styles.requestUrl}>{result.request_url}</p>
+          <div className={styles.resultContainer}>
+            <p className={styles.resultUrl}>{result.result_url}</p>
+            <button>Copy</button>
+          </div>
         </li>
       ))}
     </ul>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import { CopyButton } from "../CopyButton/CopyButton";
 import styles from "./UrlList.module.scss";
 
@@ -18,8 +18,11 @@ const MOCK_URL_RESULT = [
 ];
 
 export function UrlList() {
-  const handleCopy = (url: string) => {
+  const [copiedItems, setCopiedItems] = useState<{ [id: string]: boolean }>({});
+
+  const handleCopy = (id: string, url: string) => {
     navigator.clipboard.writeText(url);
+    setCopiedItems((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -29,7 +32,10 @@ export function UrlList() {
           <p className={styles.requestUrl}>{result.request_url}</p>
           <div className={styles.resultContainer}>
             <p className={styles.resultUrl}>{result.result_url}</p>
-            <CopyButton clickHandler={() => handleCopy(result.result_url)} />
+            <CopyButton
+              clickHandler={() => handleCopy(result.id, result.result_url)}
+              isCopied={!!copiedItems[result.id]}
+            />
           </div>
         </li>
       ))}

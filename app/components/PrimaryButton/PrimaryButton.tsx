@@ -5,11 +5,13 @@ interface PrimaryButtonProps {
   text: string;
   mode: "large" | "small";
   clickHandler: () => void;
+  disabled: boolean;
 }
 export function PrimaryButton({
   text,
   mode = "large",
   clickHandler,
+  disabled = true,
 }: PrimaryButtonProps) {
   return (
     <button
@@ -17,6 +19,7 @@ export function PrimaryButton({
         mode === "large" ? styles["button--large"] : styles["button--small"]
       }`}
       onClick={clickHandler}
+      disabled={disabled}
     >
       {text}
     </button>

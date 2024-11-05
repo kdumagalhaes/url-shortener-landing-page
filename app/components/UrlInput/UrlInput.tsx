@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 import { shortenUrl } from "@/app/actions/shortenUrl";
+import { useUrl } from "@/app/context/UrlContext";
 import styles from "./UrlInput.module.scss";
 export function UrlInput() {
+  const { getUrl } = useUrl();
   const [url, setUrl] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
 
@@ -19,6 +21,7 @@ export function UrlInput() {
   const handleClick = async () => {
     validateUrl();
     const { result_url } = await shortenUrl(url);
+    if (result_url) getUrl(result_url);
     console.log("result_url = ", result_url);
   };
 

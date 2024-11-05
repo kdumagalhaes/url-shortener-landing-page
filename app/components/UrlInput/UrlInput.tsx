@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./UrlInput.module.scss";
 import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import { shortenUrl } from "@/app/actions/shortenUrl";
+import styles from "./UrlInput.module.scss";
 export function UrlInput() {
   const [url, setUrl] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
@@ -13,6 +14,12 @@ export function UrlInput() {
     } else {
       setIsEmpty(false);
     }
+  };
+
+  const handleClick = async () => {
+    validateUrl();
+    const { result_url } = await shortenUrl(url);
+    console.log("result_url = ", result_url);
   };
 
   return (
@@ -28,9 +35,10 @@ export function UrlInput() {
         {isEmpty && <p className={styles.warningMessage}>Please add a link</p>}
       </div>
       <PrimaryButton
-        clickHandler={validateUrl}
+        clickHandler={handleClick}
         text="Shorten It"
         mode="large"
+        disabled={isEmpty}
       />
     </div>
   );

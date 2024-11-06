@@ -4,18 +4,23 @@ interface UrlProviderProps {
   children: ReactNode;
 }
 
+interface UrlState {
+  request: string;
+  result: string;
+}
+
 interface UrlContextModel {
-  getUrl: (url: string) => void;
-  url: string;
+  getUrl: (request: string, result: string) => void;
+  url: UrlState | null;
 }
 
 export const UrlContext = createContext({} as UrlContextModel);
 
 export const UrlProvider = ({ children }: UrlProviderProps) => {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState<UrlState | null>(null);
 
-  const getUrl = (url: string) => {
-    setUrl(url);
+  const getUrl = (request: string, result: string) => {
+    setUrl({ request, result });
   };
 
   const value = {

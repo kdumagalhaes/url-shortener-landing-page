@@ -21,7 +21,7 @@ export function UrlInput() {
   const handleClick = async () => {
     validateUrl();
     const { result_url } = await shortenUrl(url);
-    if (result_url) getUrl(result_url);
+    if (result_url) getUrl(url, result_url);
     console.log("result_url = ", result_url);
   };
 
